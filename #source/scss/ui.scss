@@ -1,0 +1,374 @@
+@import "variablestyle.scss";
+@import "nullstyle.scss";
+
+//============================================<------------=========BODY===============------------>===============================================================================================
+body.scroll-lock {
+	overflow: hidden;
+}
+
+body {
+	font-family: $fontFamily;
+}
+
+//=====================================<КЛАССЫ-ПО-УМОЛЧАНИЮ>======================================================================================================================
+
+/*
+			<div class="fa-solid fa-location-dot"></div>
+			<div class="fa-solid fa-phone-flip"></div>
+			<div class="fa-solid fa-envelope"></div>
+*/
+
+.ibg {
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	position: relative;
+
+	img {
+		display: none;
+	}
+}
+
+.wrapper {
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+	min-height: 100%;
+}
+
+.page {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+.container {
+	max-width: $containerWidth;
+	padding: 0px 15px;
+	margin: 0px auto;
+}
+
+
+
+//============<FULLSCREEN>=============================================================================================================================================================
+.page {
+
+	// .page__full-screen
+
+	&__full-screen {
+		position: relative;
+		flex: 1 0 100%;
+
+		&:before {
+			content: '';
+			background-color: rgba(255, 255, 255, 0.2);
+			width: 1px;
+			height: 100%;
+			position: absolute;
+			left: 50%;
+			top: 200px;
+			height: calc(100% - 200px);
+			z-index: 2;
+		}
+	}
+}
+
+.full-screen {
+
+	// .full-screen__image
+
+	&__image {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
+}
+
+.full-screen {
+
+	// .full-screen__container
+
+	&__container {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		z-index: 3;
+	}
+
+	// .full-screen__text
+
+	&__text {
+		position: absolute;
+		top: 50%;
+		left: 80px;
+		z-index: 2;
+		writing-mode: vertical-rl;
+		white-space: nowrap;
+		line-height: 100%;
+		font-size: 12px;
+		font-weight: 700;
+		color: #fff;
+		transform: translate(0%, -50%) rotate(-180deg);
+
+		@media (max-width: $md2) {
+			display: none;
+		}
+	}
+
+	// .full-screen__content
+
+	&__content {
+		position: relative;
+		z-index: 2;
+		text-align: center;
+		display: grid;
+
+		@media (max-width: $md2) {
+			padding: 100px 0px 0px 0px;
+		}
+
+		@media (max-width: $md5) {
+			padding: 80px 0px 0px 0px;
+		}
+	}
+
+	// .full-screen__sub-title
+
+	&__sub-title {
+		letter-spacing: 10px;
+		line-height: 116%;
+		text-transform: uppercase;
+		font-size: 12px;
+		color: #fff;
+		font-weight: 700;
+		margin: 0px 0px calc(14/12* 1em) 0px;
+
+		@media (max-width: $md5) {
+			display: none;
+		}
+	}
+
+	// .full-screen__title
+
+	&__title {
+		@include adaptiv-value("font-size", 94, 28, 1);
+		font-family: 'Banny';
+		font-weight: 700;
+		text-transform: uppercase;
+		color: #fff;
+		white-space: nowrap;
+
+
+	}
+
+	// .full-screen__sharp
+
+	&__sharp {
+		margin: 30px 0px 0px 0px;
+		width: 60px;
+		height: 6px;
+		background-color: #E8C300;
+		justify-self: center;
+
+		@media (max-width: $md5) {
+			display: none;
+		}
+	}
+
+	// .full-screen__buttons
+
+	&__buttons {
+		margin: 50px 0px 0px 0px;
+		justify-self: center;
+		text-align: center;
+
+		@media (max-width: $md5) {
+			margin: 10px 0px 0px 0px;
+			display: grid;
+			grid-auto-flow: row;
+			gap: 20px;
+		}
+
+		@media (max-width: $md6) {
+			margin: 40px 0px 0px 0px;
+		}
+	}
+
+	// .full-screen__button
+
+	&__button {
+		line-height: 122%;
+		font-size: 12px;
+		font-weight: 700;
+		padding: 20px 60px;
+		color: #fff;
+		border-radius: 5px;
+
+		&:nth-child(1) {
+			background-color: #E8C300;
+		}
+
+		&:nth-child(2) {
+			background-color: transparent;
+			border: 1px solid rgba(255, 255, 255, 0.5);
+		}
+
+		@media (min-width: $md5) {
+			&:not(:last-child) {
+				margin: 0px 40px 0px 0px;
+			}
+		}
+	}
+
+	// .full-screen__scroll
+
+	&__scroll {
+		justify-self: center;
+		position: absolute;
+		bottom: -160px;
+		z-index: 3;
+
+		&:before {
+			width: 40px;
+			height: 40px;
+			border-radius: 50%;
+			background-color: #fff;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		border-radius: 50%;
+		padding: 10px;
+		border: 1px solid rgba(255, 255, 255, 0.2);
+
+		@media (max-width: $md2) {
+			display: none;
+		}
+	}
+
+	// .full-screen__icons
+
+	&__icons {
+		position: absolute;
+		top: 50%;
+		right: 80px;
+		z-index: 2;
+		display: grid;
+		grid-auto-flow: row;
+		gap: 20px;
+		transform: translate(0%, -50%);
+
+		@media (max-width: $md2) {
+			display: none;
+		}
+	}
+
+	// .full-screen__icon
+
+	&__icon {
+		border: 1px solid rgba(255, 255, 255, 0.2);
+		border-radius: 50%;
+		padding: 20px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+	}
+}
+
+//=======================================================<ОДИНАКОВЫЕ=КЛАССЫ=ДЛЯ=ТЕКСТОВ>================================================================================================
+
+.title {
+	@include adaptiv-value("font-size", 36, 24, 1);
+	line-height: 133%;
+	color: #000;
+	font-family: 'Banny';
+	font-weight: 700;
+	text-transform: uppercase;
+}
+
+.text {
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 171%;
+	color: #000;
+}
+
+.btn-yellow {
+	line-height: 122%;
+	font-size: 12px;
+	font-weight: 700;
+	padding: 20px 60px;
+	color: #fff;
+	border-radius: 5px;
+	background-color: #E8C300;
+
+
+}
+
+//===============================<КЛАССЫ=ПО=ТИПУ=БОРДЕРА>============================================================================================================================
+.bd-h-l {
+	border-right: 1px solid rgba(255, 255, 255, 0.2);
+	position: absolute;
+	z-index: 2;
+	left: 20%;
+	top: 102px;
+	height: calc(100% - 102px);
+}
+
+.bd-h-r {
+	border-right: 1px solid rgba(255, 255, 255, 0.2);
+	position: absolute;
+	z-index: 2;
+	right: 20%;
+	top: 102px;
+	height: calc(100% - 102px);
+}
+
+.sharp {
+	width: 60px;
+	height: 6px;
+	background-color: #E8C300;
+}
+
+.bd-h {
+	height: 100%;
+	background-color: rgba(255, 255, 255, 0.2);
+	width: 1px;
+	position: absolute;
+	left: 50%;
+	z-index: 2;
+}
+
+.bd-h-n {
+	height: 100%;
+	background-color: rgba(255, 255, 255, 0.2);
+	width: 1px;
+	position: absolute;
+	top: 0;
+	left: 50%;
+	z-index: 2;
+}
+
+//=================================<КЛАССЫ=ДЛЯ=ТОЧЕК=СТРЕЛОК=СВАЙПЕРА>===========================================================================================
+.swiper-arrow-next {}
+
+.swiper-arrow-previous {}
+
+//================================<MENU-BURGER>==================================================================================================================================================\
+
+
+//===============ОДИНАКОВЫЕ-БЛОКИ================================================================================================================================================
+
+//===============MAIN-SLIDER================================================================================================================================================================================================================================================================================

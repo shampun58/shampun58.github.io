@@ -1,0 +1,41 @@
+//==========================FOOTER============================================================================================================================================
+.footer {
+
+	// .footer__body
+
+	&__body {}
+
+	// .footer__map
+
+	&__map {
+		position: relative;
+		padding: 0px 0px 32% 0px;
+
+		img {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+
+	// .footer__copy
+
+	&__copy {
+		width: 100%;
+		padding: 40px 0px;
+		font-size: 12px;
+		font-weight: 400;
+		text-align: center;
+		line-height: 110%;
+		color: rgba(255, 255, 255, 0.5);
+		background-color: rgba(0, 0, 0, 0.9);
+
+		span {
+
+			font-weight: 700;
+		}
+	}
+}
